@@ -12,7 +12,6 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.4",
     "bootstrap": "4.6.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "html-react-parser": "^1.3.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.3",
@@ -36,10 +35,9 @@
     "workbox-range-requests": "^5.1.3",
     "workbox-routing": "^5.1.3",
     "workbox-strategies": "^5.1.3",
-    "workbox-streams": "^5.1.3"
-  },
-  "devDependencies": {
+    "workbox-streams": "^5.1.3",
     "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.25.1",
     "prettier": "^2.4.0"
