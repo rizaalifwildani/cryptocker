@@ -37,10 +37,10 @@ export default function CryptoTable({
         </div>
         {/* CONTENT */}
         {!loading && (
-          <div className="table-content">
+          <div className="table-content mt-2">
             {data.length <= 0 && <EmptyData />}
             {data.map((d, i) => (
-              <List key={`market-${d.id}`} dense>
+              <List key={`market-${d.id}`} dense disablePadding>
                 {i == 0 && <Divider />}
                 <ListItem button>
                   <ListItemText>
