@@ -1,7 +1,7 @@
 ## Cryptocker
 
 Crypto Tracker with React.\
-In this project data will be updated every 70s.\
+In this project data will be updated every 70s
 
 ## API
 
