@@ -81,9 +81,9 @@ export default function Detail() {
                     state.detail.market_data.price_change_percentage_24h < 0
                       ? ""
                       : "+"
-                  }${state.detail.market_data.price_change_percentage_24h.toFixed(
-                    2
-                  )}`}{" "}
+                  }${
+                    state.detail.market_data.price_change_percentage_24h
+                  }%`}{" "}
                   {state.detail.market_data.price_change_percentage_24h < 0 && (
                     <DropDownIcon className="mr-n1" />
                   )}{" "}

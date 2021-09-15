@@ -47,7 +47,7 @@ export default function Coin({
                     : theme.palette.success.main,
               }}
             >
-              {`${priceChange < 0 ? "" : "+"}${priceChange}`}{" "}
+              {`${priceChange < 0 ? "" : "+"}${priceChange}%`}{" "}
               {priceChange < 0 && <DropDownIcon className="mr-n1" />}{" "}
               {priceChange >= 0 && <DropUpIcon className="mr-n1" />}
             </span>

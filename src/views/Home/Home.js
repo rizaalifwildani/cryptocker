@@ -93,6 +93,7 @@ export default function Home() {
                 dispatch(setWatchList(selectedCoin))
                 dispatch(openDrawerMain(false))
               }}
+              disabled={selectedCoin ? false : true}
               size="large"
               color="inherit"
               variant="outlined"
