@@ -1,6 +1,11 @@
 ## Cryptocker
-Crypto Tracker with React
-In this project data will be updated every 70s
+
+Crypto Tracker with React.\
+In this project data will be updated every 70s.\
+
+## API
+
+The Crypto data in this project has taken from [https://api.coingecko.com/](https://api.coingecko.com/)
 
 ## Available Scripts
 
