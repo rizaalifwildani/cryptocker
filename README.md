@@ -1,3 +1,7 @@
+## Cryptocker
+Crypto Tracker with React
+In this project data will be updated every 70s
+
 ## Available Scripts
 
 In the project directory, you can run:

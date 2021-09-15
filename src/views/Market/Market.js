@@ -20,6 +20,7 @@ export default function Market() {
 
   /* First Mount */
   useEffect(() => {
+    dispatch(openSnackBar(false))
     dispatch(fetchAllMarket(1, true)) // true => loading
   }, [])
 
