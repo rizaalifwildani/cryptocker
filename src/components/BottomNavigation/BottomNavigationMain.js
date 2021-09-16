@@ -82,7 +82,7 @@ export default function BottomNavigationMain() {
           right: 0;
           left: 0;
           text-align: center;
-          margin-bottom: 10px;
+          padding-bottom: 10px;
         }
         .btn-add-watchlist .icon {
           font-size: 70px;

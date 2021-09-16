@@ -31,32 +31,38 @@ export const fetchAllWatchList = (loading) => {
     if (loading) {
       dispatch(requestWatchList())
     }
-    const watchLists = cookies.get("watchLists") || []
+    let watchLists = cookies.get("watchLists") || []
+    let coinTemp = []
     cryptoService
       .getAll(1)
       .then((res) => {
-        let watchListsTemp = watchLists
-        watchLists.map((w, i) => {
+        let watchListsTemp = []
+        for (let index = 0; index < watchLists.length; index++) {
           // Find coin in the market
-          const findCoin = res.data.find((c) => c.id === w.id)
+
+          const findCoin = res.data.find(
+            (curcoint) => curcoint.id === watchLists[index].id
+          )
           // if coin exist
           if (findCoin) {
-            // remove current watchlist
-            watchListsTemp.splice(i, 1)
             // push new data watchlist from findCoin to the watchListsTemp
-            watchListsTemp.push(findCoin)
-            // save watchListsTemp to the cookie
+            watchListsTemp.push({
+              id: findCoin.id,
+            })
+            // push coin object
+            coinTemp.push(findCoin)
+            // save watchLists to the cookie
             cookies.set("watchLists", watchListsTemp, {
               path: "/",
               sameSite: "strict",
             })
           }
-        })
-        dispatch(requestWatchListSuccess(sortHelper.sortCoin(watchListsTemp)))
+        }
+        dispatch(requestWatchListSuccess(sortHelper.sortCoin(coinTemp)))
       })
       .catch((err) => {
         console.error(err)
-        dispatch(requestWatchListSuccess(watchLists))
+        dispatch(requestWatchListSuccess([]))
       })
   }
 }
@@ -71,7 +77,9 @@ export const setWatchList = (payload) => {
     let watchLists = cookies.get("watchLists") || []
     const find = watchLists.find((w) => w.id === payload.id)
     if (!find) {
-      watchLists.push(payload)
+      watchLists.push({
+        id: payload.id,
+      })
       cookies.set("watchLists", watchLists, {
         path: "/",
         sameSite: "strict",
@@ -90,7 +98,7 @@ export const unsetWatchList = (payload) => {
       const watchListIndex = watchLists.indexOf(find)
       if (watchListIndex > -1) {
         watchLists.splice(watchListIndex, 1)
-        cookies.remove("watchLists", watchLists, {
+        cookies.remove("watchLists", {
           path: "/",
           sameSite: "strict",
         })
