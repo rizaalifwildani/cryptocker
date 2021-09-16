@@ -53,21 +53,20 @@ export default function BottomNavigationMain() {
             icon={menu.icon}
           />
         ))}
+        {/* BUTTON ADD WATCHLIST */}
+        <div
+          className={`btn-add-watchlist d-md-none d-lg-none d-xl-none ${
+            location.pathname !== routerHelper.HOME ? "d-none" : ""
+          }`}
+        >
+          <ButtonIcon
+            icon={<AddCircleIcon className="icon" />}
+            onClick={() => {
+              dispatch(openDrawerMain(true))
+            }}
+          />
+        </div>
       </BottomNavigation>
-
-      {/* BUTTON ADD WATCHLIST */}
-      <div
-        className={`btn-add-watchlist d-md-none d-lg-none d-xl-none ${
-          location.pathname !== routerHelper.HOME ? "d-none" : ""
-        }`}
-      >
-        <ButtonIcon
-          icon={<AddCircleIcon className="icon" />}
-          onClick={() => {
-            dispatch(openDrawerMain(true))
-          }}
-        />
-      </div>
 
       <style jsx="true">{`
         .navigation-main {
@@ -82,7 +81,8 @@ export default function BottomNavigationMain() {
           right: 0;
           left: 0;
           text-align: center;
-          padding-bottom: 10px;
+          margin-bottom: 10px;
+          z-index: -1;
         }
         .btn-add-watchlist .icon {
           font-size: 70px;
