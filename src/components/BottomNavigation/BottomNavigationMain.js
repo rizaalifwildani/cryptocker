@@ -39,7 +39,6 @@ export default function BottomNavigationMain() {
         onChange={(event, newValue) => {
           history.push(menus[newValue].route)
         }}
-        showLabels
         style={{ backgroundColor: theme.palette.secondary.dark }}
         className="navigation-main d-md-none d-lg-none d-xl-none"
       >
@@ -49,6 +48,7 @@ export default function BottomNavigationMain() {
             className={
               location.pathname !== routerHelper.HOME ? "" : menu.class
             }
+            showLabel
             label={menu.label}
             icon={menu.icon}
           />
