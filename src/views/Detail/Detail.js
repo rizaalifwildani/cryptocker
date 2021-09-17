@@ -112,7 +112,7 @@ export default function Detail() {
                 </div>
                 <div className="col col-6 py-2 border-bottom border-right">
                   <Typography variant="caption">CIRCULATING SUPPLY</Typography>
-                  <Typography variant="h6" className="font-weight-bold">
+                  <Typography variant="h6" className="font-weight-bold" noWrap>
                     {state.detail.market_data.circulating_supply} BTC
                   </Typography>
                 </div>
